@@ -9,14 +9,14 @@ import javax.persistence.*;
 public class Persona {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    Column(name = "idPersona", unique = true, nullable = false)
+    @Column(unique = true, nullable = false)
 
     private Integer idPersona;
 
-    private String Nombre;
-    private String Apellido;
-    private int Dni;
-    private String Es_Empleado;
+    private String nombre;
+    private String apellido;
+    private int dni;
+    private String es_Empleado;
 
     public Integer getIdPersona() {
         return idPersona;
@@ -27,35 +27,35 @@ public class Persona {
     }
 
     public String getNombre() {
-        return Nombre;
+        return nombre;
     }
 
     public void setNombre(String nombre) {
-        Nombre = nombre;
+        this.nombre = nombre;
     }
 
     public String getApellido() {
-        return Apellido;
+        return apellido;
     }
 
     public void setApellido(String apellido) {
-        Apellido = apellido;
+        this.apellido = apellido;
     }
 
-    public int getDni() {
-        return Dni;
+    public Persona getDni() {
+        return dni;
     }
 
     public void setDni(int dni) {
-        Dni = dni;
+        this.dni = dni;
     }
 
     public String getEs_Empleado() {
-        return Es_Empleado;
+        return es_Empleado;
     }
 
     public void setEs_Empleado(String es_Empleado) {
-        Es_Empleado = es_Empleado;
+        this.es_Empleado = es_Empleado;
     }
 }
 

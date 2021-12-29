@@ -17,15 +17,18 @@ public class PersonaControlador {
     public Persona nuevaPersona(@RequestBody Persona persona) {
         return personaService.nuevaPersona(persona);
     }
-    @PostMapping("/borrarPersona"){
-        Object del = personaService.borrarPersona(@RequestParam Integer idPersona);
+
+    @PostMapping("/borrarPersona")
+       public Persona personaService(@RequestBody Persona persona){
+        Persona del = personaService.borrarPersona(persona);
         return del;
+
     }
-    @PostMapping("/actualizarPersona"){
-        public Persona actualizarPersona(@RequestBody Persona persona){
-            Object per = personaService.actualizarPersona(persona);
-            return per;
-        }
+
+    @PostMapping(path = "/actualizarPersona")
+    public Persona actualizarPersona(@RequestBody Persona persona){
+        Persona per = personaService.actualizarPersona(persona);
+        return per;
     }
 
 
